@@ -5,7 +5,11 @@
 
  @endsection
 @section('content')
+
 <!--this code change for master branch -->
+
+<!--   code chnage into master branch  -->
+
 <div class="container">
 	<div class="col-md-12">
     <div  style="width: 400px;">
