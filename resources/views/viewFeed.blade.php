@@ -5,6 +5,7 @@
 
  @endsection
 @section('content')
+<!-- changes made into alpha  branch  -->
 <div class="container">
 	<div class="col-md-12">
     <div  style="width: 400px;">
