@@ -13,15 +13,7 @@ use App\Post;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 // */
-Route::get('/blash', function()
-{
-	$post = Post::find(1);
-	$post->update(['title'=>'my newsest title']);
-	return $post;
 
-});
-
-Route::resource('posts','PostController');
 
 
 
