@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-         $schedule->command('notify:email')->everyMinute();     
+         $schedule->command('notify:email')->daily();     
         /* Get all tasks from the database */
        
     }
