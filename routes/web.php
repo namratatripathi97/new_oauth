@@ -23,9 +23,7 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 //Route::get('/api/{name}/{client}/{call}','SocialController@executeApi');     
  
 Route::post('/api/{name}/{client}/{call}','SocialController@executeApi');  
-Route::get('/api/view-client','SocialController@viewClient')->name('view-client');   
-Route::get('/api/view-bullhorn','SocialController@viewBullhorn')->name('view-bullhorn'); 
-Route::get('/api/edit-bullhorn','SocialController@editViewBullhorn')->name('edit-bullhorn');           
+           
 Route::post('/api/addBullhorn','SocialController@addBullhorn')->name('addBullhorn'); 
 Route::post('/api/editBullhorn','SocialController@editBullhorn')->name('editBullhorn');                      
 Route::post('/api/addClient','SocialController@addClient')->name('addClient');          
@@ -38,6 +36,14 @@ Route::get('/api/indeed-redirect','SocialController@indeedRedirect');
 Route::post('/api/{clientname}/{clientintegration}','SocialController@customApi');                
 
 
+Route::group(array('before' => 'auth'), function(){
+   Route::get('/api/view-client','SocialController@viewClient')->name('view-client');   
+Route::get('/api/view-bullhorn','SocialController@viewBullhorn')->name('view-bullhorn'); 
+Route::get('/api/edit-bullhorn','SocialController@editViewBullhorn')->name('edit-bullhorn');    // ... 
+});
+
+
+Route::get('/viewFeed','AwsLambdaController@viewFeedLambda');
 //http://oauth.redwoodtechnologysolutions.com/wp/oauth/public/api/indeed?apitoken=aa102235a5ccb18bd3668c0e14aa3ea7e2503cfac2a7a9bf3d6549899e125af4&jobid=eca53bf1169ee76e590d&joblocation=Charlotte, NC&jobcompanyname=Coast Personnel Services&jobtitle=Quality Technician&joburl=https://www.indeedjobs.com/redwood-technology-solutions/jobs/eca53bf1169ee76e590d&posturl=https://dradisindeedapply.sandbox.indeed.net/process-indeedapply
 
 /*  
